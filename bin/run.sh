@@ -39,6 +39,8 @@ fi
 ### Prepare configuration
 # nginx config
 perl -p -i -e "s/HTTP_PORT/${HTTP_PORT}/g" /etc/nginx/sites-enabled/wordpress
+perl -p -i -e "s/HTTPS_PORT/${HTTPS_PORT}/g" /etc/nginx/sites-enabled/wordpress
+perl -p -i -e "s/SERVER_NAME/${SERVER_NAME}/g" /etc/nginx/sites-enabled/wordpress
 HTTP_ESCAPED_DOCROOT=`echo ${HTTP_DOCUMENTROOT} | sed "s/\//\\\\\\\\\//g"`
 perl -p -i -e "s/HTTP_DOCUMENTROOT/${HTTP_ESCAPED_DOCROOT}/g" /etc/nginx/sites-enabled/wordpress
 
